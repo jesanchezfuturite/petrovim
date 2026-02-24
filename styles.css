@@ -6,17 +6,18 @@
     --color-dark: #222222;
     --color-dark-muted: #3a3a3a;
     --color-dark-accent: #111111;
-    
+
     /* Secondary Colors: Industrial Blues / Pale Blues */
-    --color-primary: #19528f; /* Deep corporate blue */
+    --color-primary: #19528f;
+    /* Deep corporate blue */
     --color-primary-light: #2b70b8;
     --color-primary-subtle: #e9f2fb;
-    
+
     /* Backgrounds & Neutrals */
     --color-white: #ffffff;
     --color-light-gray: #f8f9fa;
     --color-gray-border: #e2e8f0;
-    
+
     /* Fonts */
     --font-main: 'Montserrat', 'Inter', sans-serif;
 }
@@ -32,7 +33,12 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-main);
     color: var(--color-dark);
 }
@@ -82,7 +88,8 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
 }
 
-.btn-primary:hover, .btn-primary:focus {
+.btn-primary:hover,
+.btn-primary:focus {
     background-color: var(--color-primary-light);
     border-color: var(--color-primary-light);
     transform: translateY(-2px);
@@ -95,7 +102,8 @@ h1, h2, h3, h4, h5, h6 {
     transition: all 0.3s ease;
 }
 
-.btn-outline-primary:hover, .btn-outline-primary:focus {
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
     color: var(--color-white);
@@ -135,8 +143,9 @@ h1, h2, h3, h4, h5, h6 {
         padding: 1.5rem;
         border-radius: 1rem;
         margin-top: 1rem;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     }
+
     .navbar.scrolled .navbar-collapse {
         margin-top: 0.5rem;
     }
@@ -156,7 +165,7 @@ h1, h2, h3, h4, h5, h6 {
 .hero-section {
     position: relative;
     min-height: 100vh;
-    background-image: url('https://picsum.photos/id/1014/1920/1080');
+    background-image: url('img/petrovim-lp-hero.webp');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -168,7 +177,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(34,34,34,0.95) 0%, rgba(34,34,34,0.7) 100%);
+    background: linear-gradient(135deg, rgba(34, 34, 34, 0.95) 0%, rgba(34, 34, 34, 0.7) 100%);
     z-index: 0;
 }
 
@@ -194,7 +203,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .compliance-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.05) !important;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05) !important;
     border-color: rgba(25, 82, 143, 0.1);
 }
 
@@ -235,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonial-card:hover {
     background-color: var(--color-white) !important;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     border-color: var(--color-gray-border) !important;
 }
 
@@ -273,12 +282,14 @@ h1, h2, h3, h4, h5, h6 {
     position: relative;
 }
 
-.form-control, .form-select {
+.form-control,
+.form-select {
     border: 1px solid var(--color-gray-border);
     transition: all 0.3s ease;
 }
 
-.form-control:focus, .form-select:focus {
+.form-control:focus,
+.form-select:focus {
     border-color: var(--color-primary-light);
     box-shadow: 0 0 0 0.25rem rgba(43, 112, 184, 0.15);
     background-color: var(--color-white) !important;
@@ -287,6 +298,7 @@ h1, h2, h3, h4, h5, h6 {
 .submit-btn {
     transition: all 0.3s ease;
 }
+
 .submit-btn:hover {
     box-shadow: 0 8px 25px rgba(25, 82, 143, 0.3);
 }
