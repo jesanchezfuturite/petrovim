@@ -2,24 +2,25 @@
    CSS Variables & Theme Setup
    ========================================================================== */
 :root {
-    /* Primary Colors: Dark Grays (Carbón) */
-    --color-dark: #222222;
-    --color-dark-muted: #3a3a3a;
-    --color-dark-accent: #111111;
-
-    /* Secondary Colors: Industrial Blues / Pale Blues */
-    --color-primary: #19528f;
-    /* Deep corporate blue */
-    --color-primary-light: #2b70b8;
-    --color-primary-subtle: #e9f2fb;
-
-    /* Backgrounds & Neutrals */
-    --color-white: #ffffff;
-    --color-light-gray: #f8f9fa;
-    --color-gray-border: #e2e8f0;
+    /* New Paleta de colores */
+    --color-bg-main: #FFFFFF;
+    --color-primary: #A5BACA;
+    /* Botones */
+    --color-primary-hover: #C8CCC2;
+    /* Botones hover */
+    --color-text-main: #444444;
+    /* Textos principales */
+    --color-text-heading: #212529;
+    /* Títulos y textos fuertes */
+    --color-highlight: #C8CCC2;
+    /* Textos resaltados */
+    --color-primary-subtle: #f9f9f9;
+    /* Fondo sutil neutro */
+    --color-footer-bg: #4D4E50;
 
     /* Fonts */
-    --font-main: 'Montserrat', 'Inter', sans-serif;
+    --font-main: 'Poppins', sans-serif;
+    --font-alt: 'Playfair Display', serif;
 }
 
 /* ==========================================================================
@@ -27,8 +28,8 @@
    ========================================================================== */
 body {
     font-family: var(--font-main);
-    color: var(--color-dark-muted);
-    background-color: var(--color-white);
+    color: var(--color-text-main);
+    background-color: var(--color-bg-main);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -40,7 +41,7 @@ h4,
 h5,
 h6 {
     font-family: var(--font-main);
-    color: var(--color-dark);
+    color: var(--color-text-heading);
 }
 
 .text-primary {
@@ -56,11 +57,17 @@ h6 {
 }
 
 .bg-light-gray {
-    background-color: var(--color-light-gray) !important;
+    background-color: #f9f9f9 !important;
 }
 
 .bg-dark-accent {
-    background-color: var(--color-dark-accent) !important;
+    background-color: var(--color-footer-bg) !important;
+}
+
+.section-subtitle {
+    font-family: var(--font-alt);
+    font-style: italic;
+    font-weight: 500;
 }
 
 .text-dark {
@@ -85,28 +92,30 @@ h6 {
 .btn-primary {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
-    transition: all 0.3s ease;
+    color: #FFFFFF;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: var(--color-primary-light);
-    border-color: var(--color-primary-light);
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    color: #212529;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(25, 82, 143, 0.3);
+    box-shadow: 0 4px 15px rgba(200, 204, 194, 0.4);
 }
 
 .btn-outline-primary {
     color: var(--color-primary);
     border-color: var(--color-primary);
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-outline-primary:hover,
 .btn-outline-primary:focus {
     background-color: var(--color-primary);
     border-color: var(--color-primary);
-    color: var(--color-white);
+    color: #FFFFFF;
     transform: translateY(-2px);
 }
 
@@ -121,7 +130,7 @@ h6 {
 }
 
 .navbar.scrolled {
-    background-color: var(--color-dark);
+    background-color: var(--color-footer-bg);
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -139,7 +148,7 @@ h6 {
 /* For mobile menu when opened at the top */
 @media (max-width: 991.98px) {
     .navbar-collapse {
-        background-color: var(--color-dark);
+        background-color: var(--color-footer-bg);
         padding: 1.5rem;
         border-radius: 1rem;
         margin-top: 1rem;
@@ -185,6 +194,13 @@ h6 {
     font-size: 3rem;
     line-height: 1.1;
     letter-spacing: -1px;
+    margin: 60px 0 30px;
+}
+
+.hero-subtitle {
+    font-weight: 500;
+    color: var(--color-highlight) !important;
+    line-height: 1.1;
 }
 
 @media (min-width: 768px) {
@@ -266,27 +282,46 @@ h6 {
    7. Banner (CTA secundario)
    ========================================================================== */
 .cta-banner {
-    background-color: var(--color-dark);
+    background-color: var(--color-highlight);
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     position: relative;
     overflow: hidden;
 }
 
-.cta-banner::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -10%;
-    width: 400px;
-    height: 400px;
-    background-color: var(--color-primary);
-    opacity: 0.15;
-    border-radius: 50%;
-    filter: blur(50px);
+.cta-banner .container {
+    background-color: #FFFFFF;
+    padding: 4rem 3rem;
+    border-radius: 2.5rem;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 1;
+}
+
+.cta-banner h2 {
+    color: var(--color-text-heading) !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.cta-banner p {
+    color: var(--color-text-main) !important;
+    margin-bottom: 2.5rem !important;
+    font-size: 1.2rem !important;
+}
+
+.banner-btn {
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
+    color: #FFFFFF !important;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .banner-btn:hover {
-    background-color: var(--color-primary-subtle);
-    transform: translateY(-2px);
+    background-color: #FFFFFF !important;
+    border-color: var(--color-primary) !important;
+    color: var(--color-primary) !important;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(165, 186, 202, 0.25);
 }
 
 /* ==========================================================================
@@ -304,9 +339,9 @@ h6 {
 
 .form-control:focus,
 .form-select:focus {
-    border-color: var(--color-primary-light);
-    box-shadow: 0 0 0 0.25rem rgba(43, 112, 184, 0.15);
-    background-color: var(--color-white) !important;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.25rem rgba(165, 186, 202, 0.2);
+    background-color: var(--color-bg-main) !important;
 }
 
 .submit-btn {
@@ -326,4 +361,25 @@ h6 {
 
 .footer-link:hover {
     color: var(--color-white) !important;
+}
+
+/* ==========================================================================
+   Section 4 Overrides (Removing remaining blue)
+   ========================================================================== */
+#beneficios .text-primary {
+    color: var(--color-highlight) !important;
+}
+
+#beneficios .bg-primary-subtle {
+    background-color: var(--color-primary-subtle) !important;
+}
+
+#beneficios .btn-outline-primary {
+    color: var(--color-text-main);
+    border-color: var(--color-primary);
+}
+
+#beneficios .btn-outline-primary:hover {
+    background-color: var(--color-primary);
+    color: #FFFFFF;
 }
