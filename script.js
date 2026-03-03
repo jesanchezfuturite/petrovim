@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
        1. Navbar Background on Scroll
        ========================================================================== */
     const navbar = document.getElementById('mainNavbar');
-    
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
@@ -22,18 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
        2. Smooth Scrolling
        ========================================================================== */
     const scrollButtons = document.querySelectorAll('.js-scroll-btn, .nav-link');
-    
+
     scrollButtons.forEach(button => {
-        button.addEventListener('click', function(e) {
+        button.addEventListener('click', function (e) {
             // Only apply to hash links
-            if(this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
+            if (this.getAttribute('href') && this.getAttribute('href').startsWith('#')) {
                 e.preventDefault();
-                
+
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
+
                 const targetElement = document.querySelector(targetId);
-                
+
                 if (targetElement) {
                     // Close collapse if open (mobile navbar)
                     const navbarCollapse = document.getElementById('navbarNav');
@@ -59,58 +59,46 @@ document.addEventListener('DOMContentLoaded', () => {
        3. Form Validation
        ========================================================================== */
     const form = document.getElementById('contactForm');
-    
+
     if (form) {
-        form.addEventListener('submit', function(event) {
-            let isValid = true;
-            
-            // Name Validation (Not empty)
-            const nombre = document.getElementById('nombre');
-            if (nombre.value.trim() === '') {
-                nombre.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                nombre.classList.remove('is-invalid');
-                nombre.classList.add('is-valid');
-            }
+        const submitBtn = form.querySelector('.submit-btn');
+        const inputs = form.querySelectorAll('input, select, textarea');
 
-            // Email Validation (Regex)
-            const correo = document.getElementById('correo');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(correo.value.trim())) {
-                correo.classList.add('is-invalid');
-                isValid = false;
+        function checkFormValidity() {
+            if (form.checkValidity()) {
+                submitBtn.removeAttribute('disabled');
             } else {
-                correo.classList.remove('is-invalid');
-                correo.classList.add('is-valid');
+                submitBtn.setAttribute('disabled', 'true');
             }
+        }
 
-            // Phone Validation (Only numbers, minimum 10 digits)
-            const telefono = document.getElementById('telefono');
-            const phoneRegex = /^[0-9]{10,}$/;
-            if (!phoneRegex.test(telefono.value.trim('\s\(\)\-'))) {
-                telefono.classList.add('is-invalid');
-                isValid = false;
-            } else {
-                telefono.classList.remove('is-invalid');
-                telefono.classList.add('is-valid');
-            }
-            
-            // Prevent submission if invalid
-            if (!isValid) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-        }, false);
-        
-        // Remove 'is-invalid' class on input focus
-        const inputs = form.querySelectorAll('.form-control');
+        // Check on every input
         inputs.forEach(input => {
             input.addEventListener('input', () => {
                 input.classList.remove('is-invalid');
-                // Optional: you can re-validate instantly here if desired
+                checkFormValidity();
+            });
+
+            // Also check on blur for better UX
+            input.addEventListener('blur', () => {
+                if (!input.checkValidity()) {
+                    input.classList.add('is-invalid');
+                } else {
+                    input.classList.remove('is-invalid');
+                    input.classList.add('is-valid');
+                }
             });
         });
-    }
 
+        // Initial check
+        checkFormValidity();
+
+        form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        }, false);
+    }
 });

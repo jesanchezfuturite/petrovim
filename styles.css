@@ -65,7 +65,6 @@ h6 {
 }
 
 .section-subtitle {
-    font-family: var(--font-alt);
     font-style: normal;
     font-weight: 500;
 }
@@ -371,16 +370,16 @@ h6 {
    Section 4 Overrides (Removing remaining blue)
    ========================================================================== */
 #beneficios .text-primary {
-    color: var(--color-highlight) !important;
+    color: #19528D !important;
 }
 
 #beneficios .bg-primary-subtle {
-    background-color: var(--color-primary-subtle) !important;
+    background-color: rgba(25, 82, 143, 0.1) !important;
 }
 
 #beneficios .btn-outline-primary {
-    color: var(--color-text-main);
-    border-color: var(--color-primary);
+    color: #19528D;
+    border-color: #19528D;
 }
 
 #beneficios .btn-outline-primary:hover {

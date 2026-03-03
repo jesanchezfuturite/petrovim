@@ -361,25 +361,26 @@
                                     <div class="invalid-feedback">Ingresa mínimo 10 dígitos numéricos.</div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="empresa" class="form-label fw-medium text-dark">Empresa</label>
+                                    <label for="empresa" class="form-label fw-medium text-dark">Empresa *</label>
                                     <input type="text" class="form-control form-control-lg bg-light-gray" id="empresa"
-                                        name="empresa" placeholder="Nombre de tu empresa">
+                                        name="empresa" placeholder="Nombre de tu empresa" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="estado" class="form-label fw-medium text-dark">Estado de la
-                                        República</label>
+                                        República *</label>
                                     <input type="text" class="form-control form-control-lg bg-light-gray" id="estado"
-                                        name="estado" placeholder="Ej. Nuevo León">
+                                        name="estado" placeholder="Ej. Nuevo León" required>
                                 </div>
                                 <div class="col-md-6">
                                     <label for="volumen" class="form-label fw-medium text-dark">Volumen mensual
-                                        requerido (litros)</label>
+                                        requerido (litros) *</label>
                                     <input type="number" class="form-control form-control-lg bg-light-gray" id="volumen"
-                                        name="volumen" placeholder="Ej. 20000" min="0">
+                                        name="volumen" placeholder="Ej. 20000" min="0" required>
                                 </div>
                                 <div class="col-12 mt-5 text-center">
                                     <button type="submit"
-                                        class="btn btn-primary btn-lg rounded-pill px-5 py-3 w-100 fw-bold submit-btn">Solicitar
+                                        class="btn btn-primary btn-lg rounded-pill px-5 py-3 w-100 fw-bold submit-btn"
+                                        disabled>Solicitar
                                         Cotización <i class="bi bi-send ms-2"></i></button>
                                 </div>
                             </div>

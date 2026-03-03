@@ -5,7 +5,7 @@ $asunto = "Nuevo lead desde Landing Page PETROVIM";
 
 // Comprobar si recibimos la solicitud POST
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    
+
     // Saneamiento simple de los datos
     $nombre = strip_tags(trim($_POST["nombre"]));
     $correo = filter_var(trim($_POST["correo"]), FILTER_SANITIZE_EMAIL);
@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mensaje .= "Empresa: " . $empresa . "\n";
     $mensaje .= "Estado: " . $estado . "\n";
     $mensaje .= "Volumen Mensual Requerido: " . $volumen . " lts\n";
-    
+
     // Encabezados
     $headers = "From: " . $nombre . " <" . $correo . ">\r\n";
     $headers .= "Reply-To: " . $correo . "\r\n";
