@@ -132,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     utm_content: data_utm.utm_content || "",
                     utm_term: data_utm.utm_term || "",
                     api_key: "Q2xpZW50ZUlEOjo0MTY=",
-                    to: ["leads@futurite.net"],
+                    to: ["svillarreal@corporativoalanis.com","jtovar@petrovim.com","leads@futurite.net"],
                     origen: "https://petrovim.com/suministro/"
                 };
 
