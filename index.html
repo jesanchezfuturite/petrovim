@@ -365,8 +365,14 @@
                                 <div class="col-md-6">
                                     <label for="volumen" class="form-label fw-medium text-dark">Volumen mensual
                                         requerido (litros) *</label>
-                                    <input type="number" class="form-control form-control-lg bg-light-gray" id="volumen"
-                                        name="volumen" placeholder="Ej. 20000" min="0" required>
+                                    <select class="form-select form-select-lg bg-light-gray" id="volumen" name="volumen" required>
+                                        <option value="" selected disabled>Selecciona un rango</option>
+                                        <option value="5,000 a 20,000 lts">5,000 a 20,000 lts</option>
+                                        <option value="20,000 a 50,000 lts">20,000 a 50,000 lts</option>
+                                        <option value="50,000 a 100,000 lts">50,000 a 100,000 lts</option>
+                                        <option value="Mayor de 100,000 lts">Mayor de 100,000 lts</option>
+                                    </select>
+                                    <div class="invalid-feedback">Por favor selecciona un rango de volumen.</div>
                                 </div>
                                 <div class="col-12 mt-5 text-center">
                                     <button type="submit"

@@ -111,12 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 event.preventDefault();
                 event.stopPropagation();
 
-                const nombre = form.querySelector("input[name='nombre']").value.trim();
-                const correo = form.querySelector("input[name='correo']").value.trim();
-                const telefono = form.querySelector("input[name='telefono']").value.trim();
-                const empresa = form.querySelector("input[name='empresa']").value.trim();
-                const estado = form.querySelector("input[name='estado']").value.trim();
-                const volumen = form.querySelector("input[name='volumen']").value.trim();
+                const nombre = form.querySelector("[name='nombre']").value.trim();
+                const correo = form.querySelector("[name='correo']").value.trim();
+                const telefono = form.querySelector("[name='telefono']").value.trim();
+                const empresa = form.querySelector("[name='empresa']").value.trim();
+                const estado = form.querySelector("[name='estado']").value.trim();
+                const volumen = form.querySelector("[name='volumen']").value.trim();
 
                 const data = {
                     nombre: nombre,
