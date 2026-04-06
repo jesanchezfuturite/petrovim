@@ -89,17 +89,17 @@ h6 {
    Buttons
    ========================================================================== */
 .btn-primary {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
-    color: #FFFFFF;
+    background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+    color: #212529;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .btn-primary:hover,
 .btn-primary:focus {
-    background-color: var(--color-primary-hover);
-    border-color: var(--color-primary-hover);
-    color: #212529;
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #FFFFFF;
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(200, 204, 194, 0.4);
 }
@@ -313,16 +313,16 @@ h6 {
 }
 
 .banner-btn {
-    background-color: var(--color-primary) !important;
+    background-color: #FFFFFF !important;
     border-color: var(--color-primary) !important;
-    color: #FFFFFF !important;
+    color: var(--color-primary) !important;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .banner-btn:hover {
-    background-color: #FFFFFF !important;
+    background-color: var(--color-primary) !important;
     border-color: var(--color-primary) !important;
-    color: var(--color-primary) !important;
+    color: #FFFFFF !important;
     transform: translateY(-3px);
     box-shadow: 0 10px 25px rgba(165, 186, 202, 0.25);
 }
@@ -351,8 +351,29 @@ h6 {
     transition: all 0.3s ease;
 }
 
-.submit-btn:hover {
+.submit-btn:disabled, 
+.submit-btn:disabled:hover {
+    background-color: var(--color-primary-hover) !important;
+    border-color: var(--color-primary-hover) !important;
+    color: #212529 !important;
+    opacity: 1; /* Remove Bootstrap's default opacity */
+    transform: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+.submit-btn:not(:disabled) {
+    background-color: #0d6efd !important; /* Azul por defecto de Bootstrap para llenado normal */
+    border-color: #0d6efd !important;
+    color: #FFFFFF !important;
+}
+
+.submit-btn:not(:disabled):hover {
+    background-color: var(--color-primary) !important; /* Azul claro para el hover */
+    border-color: var(--color-primary) !important;
+    color: #FFFFFF !important;
     box-shadow: 0 8px 25px rgba(25, 82, 143, 0.3);
+    transform: translateY(-2px);
 }
 
 /* ==========================================================================
