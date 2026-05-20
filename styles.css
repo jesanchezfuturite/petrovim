@@ -118,6 +118,16 @@ h6 {
     transform: translateY(-2px);
 }
 
+.btn-outline-light {
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.btn-outline-light:hover,
+.btn-outline-light:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.25);
+}
+
 /* ==========================================================================
    Navbar
    ========================================================================== */
