@@ -361,25 +361,28 @@ h6 {
     transition: all 0.3s ease;
 }
 
-.submit-btn:disabled, 
+.submit-btn:disabled,
 .submit-btn:disabled:hover {
     background-color: var(--color-primary-hover) !important;
     border-color: var(--color-primary-hover) !important;
     color: #212529 !important;
-    opacity: 1; /* Remove Bootstrap's default opacity */
+    opacity: 1;
+    /* Remove Bootstrap's default opacity */
     transform: none;
     box-shadow: none;
     cursor: not-allowed;
 }
 
 .submit-btn:not(:disabled) {
-    background-color: #0d6efd !important; /* Azul por defecto de Bootstrap para llenado normal */
+    background-color: #0d6efd !important;
+    /* Azul por defecto de Bootstrap para llenado normal */
     border-color: #0d6efd !important;
     color: #FFFFFF !important;
 }
 
 .submit-btn:not(:disabled):hover {
-    background-color: var(--color-primary) !important; /* Azul claro para el hover */
+    background-color: var(--color-primary) !important;
+    /* Azul claro para el hover */
     border-color: var(--color-primary) !important;
     color: #FFFFFF !important;
     box-shadow: 0 8px 25px rgba(25, 82, 143, 0.3);
@@ -416,4 +419,37 @@ h6 {
 #beneficios .btn-outline-primary:hover {
     background-color: var(--color-primary);
     color: #FFFFFF;
+}
+
+/* ==========================================
+   WhatsApp Floating Button Style
+   ========================================== */
+.whatsapp-float {
+    position: fixed;
+    bottom: 35px;
+    left: 40px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    text-decoration: none;
+    font-family: var(--font-body);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-icon-container {
+    width: 55px;
+    height: 55px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover .whatsapp-icon-container {
+    transform: scale(1.1);
 }
